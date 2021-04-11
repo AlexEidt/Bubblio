@@ -36,11 +36,11 @@ Argument | Description | Example
         Font to write letters in. (default "helvetica").
         One of "sapphire", "courier", "emerald", "helvetica", "athens", "geneva", "la", or "times".
   -frames int
-        Number of frames in animated GIF (default 10).
+        Number of frames in animated GIF (default 100).
   -img
         Include PNG images if true (for use with -animate).
   -o string
-        Orienation. [L]eft, [R]ight, or [C]entered (default "L").
+        Orientation. [L]eft, [R]ight, or [C]entered (default "L").
   -scale int
         Relative size of components (default 50).
   -shape string
