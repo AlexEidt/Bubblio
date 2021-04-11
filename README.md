@@ -57,9 +57,9 @@ Argument | Description | Example
 Bubblio offers different shapes to draw letters in:
 
 Circle | Square | Triangle
---- | --- | ---
+:---: | :---: | :---:
 <img src="Documentation/8circle.png" alt="Circle"> | <img src="Documentation/8square.png" alt="Square"> | <img src="Documentation/8triangle.png" alt="Triangle">
-Polygon (5 Sides) | Polygon (9 Sides) | Random
+**Polygon (5 Sides)** | **Polygon (9 Sides)** | **Random**
 <img src="Documentation/8polygon.png" alt="Polygon 5 Sides (Default)"> | <img src="Documentation/8polygon9.png" alt="Polygon 9 Sides"> | <img src="Documentation/8rand.png" alt="Random">
 
 ### Fonts
@@ -82,11 +82,11 @@ Times | <img src="Documentation/times.png" height=75 alt="Times">
 The color options available are:
 
 Yellow | Red
---- | ---
+:---: | :---:
 <img src="Documentation/yellow.png" height=100 alt="Yellow"> | <img src="Documentation/red.png" height=100 alt="red">
-Purple | Blue
+**Purple** | **Blue**
 <img src="Documentation/purple.png" height=100 alt="Purple"> | <img src="Documentation/blue.png" height=100 alt="Blue">
-Grayscale | Random
+**Grayscale** | **Random**
 <img src="Documentation/grayscale.png" height=100 alt="Grayscale"> | <img src="Documentation/random.png" height=100 alt="Random">
 
 ## Acknowledgements
