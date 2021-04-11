@@ -37,8 +37,6 @@ func main() {
 	splitter := args[1]
 	filename := args[2]
 
-	fmt.Println(*palette, *img, *animate, *frames)
-
 	symbols := ParseFont(filepath.Join("Fonts", *font+".yaff"))
 
 	unknowns := make([]string, 0, 0)
@@ -126,6 +124,28 @@ func CreateGIF(filename string, count int, keep bool) {
 				color.RGBA{66, 135, 245, 255},
 				color.RGBA{27, 27, 196, 255},
 				color.RGBA{27, 159, 196, 255},
+				color.RGBA{99, 190, 242, 255},
+				color.RGBA{25, 0, 255, 255},
+				color.RGBA{119, 255, 0, 255},
+				color.RGBA{199, 255, 150, 255},
+				color.RGBA{62, 240, 22, 255},
+				color.RGBA{105, 255, 71, 255},
+				color.RGBA{255, 255, 71, 255},
+				color.RGBA{255, 71, 71, 255},
+				color.RGBA{255, 0, 0, 255},
+				color.RGBA{199, 95, 10, 255},
+				color.RGBA{235, 85, 35, 255},
+				color.RGBA{158, 41, 2, 255},
+				color.RGBA{158, 2, 132, 255},
+				color.RGBA{255, 41, 219, 255},
+				color.RGBA{247, 109, 224, 255},
+				color.RGBA{84, 16, 173, 255},
+				color.RGBA{52, 19, 102, 255},
+				color.RGBA{0, 36, 38, 255},
+				color.RGBA{133, 166, 168, 255},
+				color.RGBA{179, 224, 227, 255},
+				color.RGBA{0, 0, 0, 255},
+				color.RGBA{10, 46, 42, 255},
 			},
 		)
 		draw.Draw(p, p.Bounds(), img, img.Bounds().Min, draw.Over)

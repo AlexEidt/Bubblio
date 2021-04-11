@@ -102,3 +102,5 @@ The bitmaps provided in the **Fonts** folder came from GitHub user [Rob Hagemans
 * **Times:** `Times_24.yaff`
 
 The GIF creation code in `main.go` in function `CreateGIF` was inspired by GitHub user [Hirmou Ochiai's](https://github.com/otiai10) [GIFFY library on GitHub](https://github.com/otiai10/giffy).
+
+Bubblio depends heavily on the [gg library](https://github.com/fogleman/gg) from [Michael Fogleman](https://github.com/fogleman) (and contributors) for the graphics.
