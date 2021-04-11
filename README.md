@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="Documentation/Bubblio.gif" height=300 alt="Bubblio Header GIF">
+    <img src="Documentation/bubblio.gif" height=300 alt="Bubblio Header GIF">
 </p>
 
 # Bubblio
