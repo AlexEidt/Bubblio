@@ -142,6 +142,7 @@ func DrawShape(
 			shape = "triangle"
 		case 2:
 			shape = "polygon"
+			sides = random%7 + 5
 		case 3:
 			shape = "circle"
 		}
