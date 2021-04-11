@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="Documentation/bubblio.gif" height=300 alt="Bubblio Header GIF">
+    <img src="Documentation/bubblio.gif" alt="Bubblio Header GIF">
 </p>
 
 # Bubblio
@@ -77,7 +77,7 @@ Courier | <img src="Documentation/courier.png" height=75 alt="Courier">
 Emerald | <img src="Documentation/emerald.png" height=75 alt="Emerald">
 Helvetica | <img src="Documentation/helvetica.png" height=75 alt="Helvetica">
 Athens | <img src="Documentation/athens.png" height=75 alt="Athens">
-Geneva | <img src="Documentation/geneva.png" height=75 alt="Geneva">
+Geneva | <img src="Documentation/Geneva.png" height=75 alt="Geneva">
 LA | <img src="Documentation/la.png" height=75 alt="LA">
 Times | <img src="Documentation/times.png" height=75 alt="Times">
 
