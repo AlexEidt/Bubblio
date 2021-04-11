@@ -146,31 +146,32 @@ func DrawShape(
 			shape = "circle"
 		}
 	}
-	scale := float64(scaled * 2)
+	radius2 := radius * 2
 	switch shape {
 	case "square":
-		im.DrawRectangle(x, y, scale, scale)
+		radius3 := radius * 3
+		im.DrawRectangle(x, y, radius3, radius3)
 		im.SetColor(bg)
 		im.Fill()
-		im.DrawRectangle(x, y, scale, scale)
+		im.DrawRectangle(x, y, radius3, radius3)
 	case "triangle":
-		im.DrawRegularPolygon(3, x, y, radius*2, radius*2)
+		im.DrawRegularPolygon(3, x, y, radius2, radius2)
 		im.SetColor(bg)
 		im.Fill()
-		im.DrawRegularPolygon(3, x, y, radius*2, radius*2)
+		im.DrawRegularPolygon(3, x, y, radius2, radius2)
 	case "polygon":
-		im.DrawRegularPolygon(5, x, y, radius*2, radius*2)
+		im.DrawRegularPolygon(sides, x, y, radius2, radius2)
 		im.SetColor(bg)
 		im.Fill()
-		im.DrawRegularPolygon(sides, x, y, radius*2, radius*2)
+		im.DrawRegularPolygon(sides, x, y, radius2, radius2)
 	default: // circle
-		im.DrawCircle(x, y, radius)
+		im.DrawCircle(x, y, radius*3/2)
 		im.SetColor(bg)
 		im.Fill()
-		im.DrawCircle(x, y, radius)
+		im.DrawCircle(x, y, radius*3/2)
 	}
 	// Draw black border
 	im.SetColor(color.Black)
-	im.SetLineWidth(float64(scaled / 4))
+	im.SetLineWidth(float64(scaled / 3))
 	im.Stroke()
 }
