@@ -19,7 +19,7 @@ There are three positional arguments for Bubblio:
 Argument | Description | Example
 --- | --- | ---
 `text` | The text you'd like to bubblify | `Bubblio`
-`sep` | If you'd like to bubblify multiple words and have them be on separate lines, **sep** specifies how they should be split | If `text` is `Hello::World`, then `sep` would be `::` to place `Hello` and `World` on separate liens.
+`sep` | If you'd like to bubblify multiple words and have them be on separate lines, **sep** specifies how they should be split | If `text` is `Hello::World`, then `sep` would be `::` to place `Hello` and `World` on separate lines.
 `output` | The output file name with file extension | `Bubblio.png`.
 
 ### Optional Arguments
@@ -54,12 +54,6 @@ Argument | Description | Example
 
 Bubblio offers four different shapes to draw letters in:
 
-* Circle
-* Square
-* Triangle
-* Polygon
-* Random
-
 Circle | Square | Triangle
 --- | --- | ---
 <img src="Documentation/8circle.png" alt="Circle"> | <img src="Documentation/8square.png" alt="Square"> | <img src="Documentation/8triangle.png" alt="Triangle">
@@ -84,12 +78,6 @@ Times | <img src="Documentation/times.png" height=75 alt="Times">
 ### Colors
 
 The five different color options available are:
-
-* Yellow
-* Red
-* Purple
-* Blue
-* Grayscale
 
 Yellow | Red
 --- | ---
