@@ -86,10 +86,8 @@ Yellow | Red
 <img src="Documentation/yellow.png" height=100 alt="Yellow"> | <img src="Documentation/red.png" height=100 alt="red">
 Purple | Blue
 <img src="Documentation/purple.png" height=100 alt="Purple"> | <img src="Documentation/blue.png" height=100 alt="Blue">
-Grayscale |
-<img src="Documentation/grayscale.png" height=100 alt="Grayscale">
-Random |
-<img src="Documentation/random.png" height=100 alt="Random">
+Grayscale | Random
+<img src="Documentation/grayscale.png" height=100 alt="Grayscale"> | <img src="Documentation/random.png" height=100 alt="Random">
 
 ## Acknowledgements
 
