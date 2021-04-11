@@ -106,12 +106,22 @@ func DrawLetter(
 	r *rand.Rand, // Random number generator object
 	im *gg.Context, // PNG Image
 ) {
+	isrand := palette == "random"
+	var bgcolor color.Color
 	for y := 0; y < s.height; y++ {
 		for x := 0; x < s.width; x++ {
 			if s.bitmap[y][x] {
 				random := r.Intn(scaled) + 1
 				for i := 0; i < random; i++ {
-					bgcolor := colormap[palette][r.Intn(len(colormap[palette]))]
+					if isrand {
+						// Choose random key from colormap
+						for k := range colormap {
+							bgcolor = colormap[k][r.Intn(len(colormap["blue"]))]
+							break
+						}
+					} else {
+						bgcolor = colormap[palette][r.Intn(len(colormap[palette]))]
+					}
 					radius := float64(r.Intn(scaled)+scaled) / 3
 					xc := float64(x*scale + r.Intn(scale) + width)
 					yc := float64(y*scale + scaled + r.Intn(scale) + height)

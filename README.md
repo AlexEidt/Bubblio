@@ -29,7 +29,9 @@ Argument | Description | Example
         Create animated GIF with letters.
   -color string
         Color palette for letters (default "blue").
-        One of "blue", "yellow", "red", or "purple".
+        One of "blue", "yellow", "red", "purple", or "random".
+  -d int
+        GIF Frame Delay in 1/100 of a second. (default 100).
   -font string
         Font to write letters in. (default "helvetica").
         One of "sapphire", "courier", "emerald", "helvetica", "athens", "geneva", "la", or "times".
@@ -52,7 +54,7 @@ Argument | Description | Example
 
 ### Shapes
 
-Bubblio offers four different shapes to draw letters in:
+Bubblio offers different shapes to draw letters in:
 
 Circle | Square | Triangle
 --- | --- | ---
@@ -77,7 +79,7 @@ Times | <img src="Documentation/times.png" height=75 alt="Times">
 
 ### Colors
 
-The five different color options available are:
+The color options available are:
 
 Yellow | Red
 --- | ---
@@ -86,7 +88,8 @@ Purple | Blue
 <img src="Documentation/purple.png" height=100 alt="Purple"> | <img src="Documentation/blue.png" height=100 alt="Blue">
 Grayscale |
 <img src="Documentation/grayscale.png" height=100 alt="Grayscale">
-
+Random |
+<img src="Documentation/random.png" height=100 alt="Random">
 
 ## Acknowledgements
 

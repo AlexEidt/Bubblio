@@ -20,14 +20,15 @@ func main() {
 
 	// Parse command line args
 	font := flag.String("font", "helvetica", "Font to write letters in.")
-	shape := flag.String("shape", "circle", "Component shapes of letters")
+	shape := flag.String("shape", "circle", "Component shapes of letters.")
 	sides := flag.Int("sides", 5, "Number of sides for the Polygon.")
-	palette := flag.String("color", "blue", "Color palette for letters")
-	scale := flag.Int("scale", 50, "Relative size of components")
-	img := flag.Bool("img", false, "Include PNG image if true (for use with -animate)")
-	animate := flag.Bool("animate", false, "Create animated GIF with letters")
-	frames := flag.Int("frames", 10, "Number of frames in animated GIF")
-	orientation := flag.String("o", "L", "Orienation. [L]eft, [R]ight, or [C]entered")
+	palette := flag.String("color", "blue", "Color palette for letters.")
+	scale := flag.Int("scale", 50, "Relative size of components.")
+	img := flag.Bool("img", false, "Include PNG image if true (for use with -animate).")
+	animate := flag.Bool("animate", false, "Create animated GIF with letters.")
+	frames := flag.Int("frames", 10, "Number of frames in animated GIF.")
+	orientation := flag.String("o", "L", "Orientation. [L]eft, [R]ight, or [C]entered.")
+	delay := flag.Int("d", 100, "GIF Frame Delay in 1/100 of a second. (default 100).")
 
 	flag.Parse()
 
@@ -94,7 +95,7 @@ func main() {
 			)
 		}
 		if *animate {
-			CreateGIF(splitname, *frames, *img)
+			CreateGIF(splitname, *frames, *img, *delay)
 		}
 	}
 }
@@ -103,8 +104,36 @@ func main() {
 // for all count from 0 to count - 1.
 // Code inspired from Hirmou Ochiai's GIFFY library on GitHub:
 // https://github.com/otiai10/giffy
-func CreateGIF(filename string, count int, keep bool) {
+func CreateGIF(filename string, count int, keep bool, delay int) {
 	g := &gif.GIF{}
+	palette := color.Palette{
+		image.Transparent,
+		color.Black,
+		color.RGBA{66, 135, 245, 255},
+		color.RGBA{27, 27, 196, 255},
+		color.RGBA{27, 159, 196, 255},
+		color.RGBA{99, 190, 242, 255},
+		color.RGBA{25, 0, 255, 255},
+		color.RGBA{119, 255, 0, 255},
+		color.RGBA{199, 255, 150, 255},
+		color.RGBA{62, 240, 22, 255},
+		color.RGBA{105, 255, 71, 255},
+		color.RGBA{255, 255, 71, 255},
+		color.RGBA{255, 71, 71, 255},
+		color.RGBA{255, 0, 0, 255},
+		color.RGBA{199, 95, 10, 255},
+		color.RGBA{235, 85, 35, 255},
+		color.RGBA{158, 41, 2, 255},
+		color.RGBA{158, 2, 132, 255},
+		color.RGBA{255, 41, 219, 255},
+		color.RGBA{247, 109, 224, 255},
+		color.RGBA{84, 16, 173, 255},
+		color.RGBA{52, 19, 102, 255},
+		color.RGBA{0, 36, 38, 255},
+		color.RGBA{133, 166, 168, 255},
+		color.RGBA{179, 224, 227, 255},
+		color.RGBA{10, 46, 42, 255},
+	}
 
 	for i := 0; i < count; i++ {
 		fname := filepath.Join("Text", filename+strconv.Itoa(i)+".png")
@@ -118,39 +147,11 @@ func CreateGIF(filename string, count int, keep bool) {
 
 		p := image.NewPaletted(
 			img.Bounds(),
-			color.Palette{
-				image.Transparent,
-				color.Black,
-				color.RGBA{66, 135, 245, 255},
-				color.RGBA{27, 27, 196, 255},
-				color.RGBA{27, 159, 196, 255},
-				color.RGBA{99, 190, 242, 255},
-				color.RGBA{25, 0, 255, 255},
-				color.RGBA{119, 255, 0, 255},
-				color.RGBA{199, 255, 150, 255},
-				color.RGBA{62, 240, 22, 255},
-				color.RGBA{105, 255, 71, 255},
-				color.RGBA{255, 255, 71, 255},
-				color.RGBA{255, 71, 71, 255},
-				color.RGBA{255, 0, 0, 255},
-				color.RGBA{199, 95, 10, 255},
-				color.RGBA{235, 85, 35, 255},
-				color.RGBA{158, 41, 2, 255},
-				color.RGBA{158, 2, 132, 255},
-				color.RGBA{255, 41, 219, 255},
-				color.RGBA{247, 109, 224, 255},
-				color.RGBA{84, 16, 173, 255},
-				color.RGBA{52, 19, 102, 255},
-				color.RGBA{0, 36, 38, 255},
-				color.RGBA{133, 166, 168, 255},
-				color.RGBA{179, 224, 227, 255},
-				color.RGBA{0, 0, 0, 255},
-				color.RGBA{10, 46, 42, 255},
-			},
+			palette,
 		)
 		draw.Draw(p, p.Bounds(), img, img.Bounds().Min, draw.Over)
 		g.Image = append(g.Image, p)
-		g.Delay = append(g.Delay, 100)
+		g.Delay = append(g.Delay, delay)
 	}
 	f, err := os.Create(filepath.Join("Text", filename+".gif"))
 	if err != nil {
