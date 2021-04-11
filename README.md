@@ -57,8 +57,8 @@ Bubblio offers four different shapes to draw letters in:
 Circle | Square | Triangle
 --- | --- | ---
 <img src="Documentation/8circle.png" alt="Circle"> | <img src="Documentation/8square.png" alt="Square"> | <img src="Documentation/8triangle.png" alt="Triangle">
-Polygon | Random |
-<img src="Documentation/8polygon.png" alt="Polygon"> | <img src="Documentation/8rand.png" alt="Random">
+Polygon (5 Sides) | Polygon (9 Sides) | Random
+<img src="Documentation/8polygon.png" alt="Polygon 5 Sides (Default)"> | <img src="Documentation/8polygon9.png" alt="Polygon 9 Sides"> | <img src="Documentation/8rand.png" alt="Random">
 
 ### Fonts
 
