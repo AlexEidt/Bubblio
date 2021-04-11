@@ -9,7 +9,7 @@ Bubblio is a script that produces scatter-plot style letters in various fonts, c
 ## Usage
 
 ```
-go run *.go text sep output
+go run *.go text sep output [optional arguments]
 ```
 
 ### Positional Arguments

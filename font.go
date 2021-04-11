@@ -8,6 +8,7 @@ import (
 	"strings"
 )
 
+// Parses a .yaff file to extract font bitmaps.
 func ParseFont(filename string) map[rune]*symbol {
 	file, err := os.Open(filename)
 	if err != nil {

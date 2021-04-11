@@ -6,6 +6,7 @@ type symbol struct {
 	bitmap [][]bool
 }
 
+// Turns a bitmap into a struct used to draw letters.
 func NewSymbol(data []string, identifier rune) *symbol {
 	bitmap := make([][]bool, len(data))
 	for row := 0; row < len(data); row++ {

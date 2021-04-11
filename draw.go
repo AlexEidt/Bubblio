@@ -9,6 +9,7 @@ import (
 	"github.com/fogleman/gg"
 )
 
+// Mapping of colors to RGB colors in that "range".
 var colormap = map[string][]color.Color{
 	"blue": {
 		color.RGBA{66, 135, 245, 255},
@@ -47,18 +48,19 @@ var colormap = map[string][]color.Color{
 	},
 }
 
+// Draws all characters (letters) on the PNG.
 func DrawCharacters(
-	symbols *map[rune]*symbol,
-	lengths *map[string]int,
-	lines []string,
-	palette string,
-	scale int,
-	width int,
-	height int,
-	orientation string,
-	shape string,
-	sides int,
-	filename string,
+	symbols *map[rune]*symbol, // Mapping of letters to bitmaps
+	lengths *map[string]int, // Map of lines and their lengths
+	lines []string, // Map of lines
+	palette string, // The color palette for this text
+	scale int, // The density of shapes in letters
+	width int, // Width of PNG
+	height int, // Height of PNG
+	orientation string, // Text alignment
+	shape string, // Type of shapes making up letters
+	sides int, // Number of sides for polygon (for shape == "polygon" only)
+	filename string, // Filename to store PNG in
 ) {
 	im := gg.NewContext(width, height)
 
@@ -91,17 +93,18 @@ func DrawCharacters(
 	im.SavePNG(filepath.Join("Text", filename))
 }
 
+// Draws one bubblified letter on the PNG.
 func DrawLetter(
-	scale int,
-	scaled int,
-	width int,
-	height int,
-	shape string,
-	sides int,
-	palette string,
-	s *symbol,
-	r *rand.Rand,
-	im *gg.Context,
+	scale int, // Density of shapes in letters
+	scaled int, // Density divided by 2
+	width int, // Width of letter
+	height int, // Height of letter
+	shape string, // Shapes making up letter
+	sides int, // Sides of polygon (for shape == "polygon" only)
+	palette string, // Color palette for this letter
+	s *symbol, // Bitmap of the letter
+	r *rand.Rand, // Random number generator object
+	im *gg.Context, // PNG Image
 ) {
 	for y := 0; y < s.height; y++ {
 		for x := 0; x < s.width; x++ {
@@ -119,16 +122,17 @@ func DrawLetter(
 	}
 }
 
+// Draws the shape given by the "shape" parameter onto the PNG.
 func DrawShape(
-	x float64,
-	y float64,
-	radius float64,
-	scaled int,
-	shape string,
-	sides int,
-	random int,
-	bg color.Color,
-	im *gg.Context,
+	x float64, // X coordinate of center
+	y float64, // Y coordinate of center
+	radius float64, // radius (for circles and polygons)
+	scaled int, // Relative size of shape
+	shape string, // Type of shape
+	sides int, // Number of sides for shape == "polygon"
+	random int, // Random number of shape == "random"
+	bg color.Color, // Background color of shape
+	im *gg.Context, // PNG Image
 ) {
 	if shape == "random" {
 		switch random % 4 {
