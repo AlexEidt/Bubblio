@@ -76,7 +76,7 @@ func DrawCharacters(
 		switch orientation {
 		case "L": // Left aligned.
 			totalwidth = scale
-		case "R": // Rigth aligned.
+		case "R": // Right aligned.
 			totalwidth = width - 3*scale - (*lengths)[line]
 		default: // Centered by default.
 			totalwidth = width/2 - (*lengths)[line]/2
