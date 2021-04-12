@@ -105,7 +105,14 @@ func main() {
 // Code inspired from Hirmou Ochiai's GIFFY library on GitHub:
 // https://github.com/otiai10/giffy
 func CreateGIF(filename string, count int, keep bool, delay int) {
-	g := &gif.GIF{}
+	disposal := make([]byte, count)
+	// Prevent gif frame stacking/crossfading.
+	for i := 0; i < count; i++ {
+		disposal[i] = gif.DisposalBackground
+	}
+	g := &gif.GIF{
+		Disposal: disposal,
+	}
 	palette := color.Palette{
 		image.Transparent,
 		color.Black,
