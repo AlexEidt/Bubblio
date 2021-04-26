@@ -18,8 +18,8 @@ There are three positional arguments for Bubblio:
 
 Argument | Description | Example
 --- | --- | ---
-`text` | The text you'd like to bubblify | `Bubblio`
-`sep` | If you'd like to bubblify multiple words and have them be on separate lines, **sep** specifies how they should be split | If `text` is `Hello::World`, then `sep` would be `::` to place `Hello` and `World` on separate lines.
+`text` | The text you'd like to bubblify. | `Bubblio`
+`sep` | If you'd like to bubblify multiple words and have them be on separate lines, **sep** specifies how they should be split. | If `text` is `Hello::World`, then `sep` would be `::` to place `Hello` and `World` on separate lines.
 `output` | The output file name with file extension. Files will be stored in the `Text` directory. | `Bubblio.png`.
 
 ### Optional Arguments
