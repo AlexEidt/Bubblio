@@ -146,7 +146,7 @@ func CreateGIF(filename string, count int, keep bool, delay int) {
 		fname := filepath.Join("Text", filename+strconv.Itoa(i)+".png")
 		f, _ := os.Open(fname)
 		if !keep {
-			os.Remove(fname)
+			defer os.Remove(fname)
 		}
 		defer f.Close()
 
